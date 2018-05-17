@@ -1,0 +1,11 @@
+services:
+  randomfood:
+    build:
+      context: c:\users\administrator\source\repos\RandomFood
+      dockerfile: RandomFood/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: randomfood
+    ports:
+    - 80/tcp
+version: '3.0'
