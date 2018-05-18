@@ -11,9 +11,12 @@ namespace RandomFood.Models
         public RandomFoodContext(DbContextOptions<RandomFoodContext> options)
            : base(options) { }
 
-        public DbSet<History> Meals { get; set; }
+
+        public DbSet<Meal> Meals { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<History> Histories { get; set; }
+
+       
 
     }
 }

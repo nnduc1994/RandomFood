@@ -18,6 +18,12 @@ namespace RandomFood
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            var connectionString = Configuration.GetConnectionString("RandomFoodConnection");
+
+            using (var context = new RandomFoodContext(..))
+            {
+                context.Database.Migrate();
+            }
         }
 
         public IConfiguration Configuration { get; }
@@ -26,10 +32,15 @@ namespace RandomFood
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            var connectionString = Configuration.GetConnectionString("FoodMenuConnection");
-            //connectionString = connectionString.Replace("ITSD-91805", DockerHostMachineIpAddress);
-            services.AddDbContext<RandomFoodContext>(options =>
-                    options.UseSqlServer(connectionString));
+            var connectionString = Configuration.GetConnectionString("RandomFoodConnection");
+
+            //SQL Serer connection 
+            //services.AddDbContext<RandomFoodContext>(options =>
+            //        options.UseSqlServer(connectionString));
+
+            //Postgre connection
+            services.AddEntityFrameworkNpgsql().AddDbContext<RandomFoodContext>(options =>
+                    options.UseNpgsql(connectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
