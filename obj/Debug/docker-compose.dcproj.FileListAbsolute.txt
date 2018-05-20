@@ -1,1 +1,2 @@
-c:\users\administrator\source\repos\RandomFood\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+c:/users/administrator/source/repos/RandomFood/obj/Debug/docker-compose.dcproj.CoreCompileInputs.cache
+/Users/ducnguyen/Coding/Web/RandomFood/obj/Debug/docker-compose.dcproj.CoreCompileInputs.cache

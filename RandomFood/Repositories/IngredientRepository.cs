@@ -23,10 +23,10 @@ namespace RandomFood.Repositories
                 _context.Ingredients.Add(input);
                 return await _context.SaveChangesAsync() > 0;
             }
-            catch (Exception e)
+			catch(Exception e)
             {
-                return await Task.FromResult<bool>(false);
-            }
+				throw new Exception($"Error while Create new ingredient. Error = {e.ToString()}");
+			}
         }
 
         public void Dispose()

@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{588C0CD1-B1AB-44CF-B946-0E8DD0D41BDE}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RandomFood/Controllers/FoodController.cs">
+    <Files>
+      <File FileName="RandomFood/Models/RandomFoodContext.cs" Line="10" Column="6" />
+      <File FileName="RandomFood/Repositories/IngredientRepository.cs" Line="33" Column="10" />
+      <File FileName="RandomFood/appsettings.json" Line="18" Column="31" />
+      <File FileName="RandomFood/Controllers/FoodController.cs" Line="45" Column="6" />
+      <File FileName="RandomFood/Models/History.cs" Line="12" Column="7" />
+      <File FileName="RandomFood/Models/Ingredient.cs" Line="12" Column="8" />
+      <File FileName="RandomFood/Models/Meal.cs" Line="8" Column="2" />
+      <File FileName="RandomFood/Startup.cs" Line="46" Column="14" />
+      <File FileName="RandomFood/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="RandomFood/Repositories/MealRepository.cs" Line="25" Column="23" />
+      <File FileName="RandomFood/Controllers/ValuesController.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.RandomFood PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

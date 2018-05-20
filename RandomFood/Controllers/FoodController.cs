@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Transactions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -34,18 +35,15 @@ namespace RandomFood.Controllers
 
         [HttpPost]
         [Route("meal/create")]
-        public async Task<ActionResult> CreateMeal()
+		public async Task<ActionResult> CreateMeal(Meal meal)
         {
-            Ingredient ingredient = new Ingredient();
-            if (ingredient != null)
+         
+			if (meal != null)
             {
-                var result = await _ingredientRepo.CreateIngredientAsync(ingredient);
-                if (result)
-                    return Ok();
-                else
-                    return BadRequest();
+				var result = await _mealRepository.CreateMealsAsync(meal);
+				if(result != null)
             }
-            return BadRequest("ingredient is null");
+            return BadRequest("No meal found");
         }
     }
 }

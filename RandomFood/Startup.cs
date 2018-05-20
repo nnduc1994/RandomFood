@@ -18,12 +18,6 @@ namespace RandomFood
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            var connectionString = Configuration.GetConnectionString("RandomFoodConnection");
-
-            using (var context = new RandomFoodContext(..))
-            {
-                context.Database.Migrate();
-            }
         }
 
         public IConfiguration Configuration { get; }
@@ -50,8 +44,12 @@ namespace RandomFood
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseMvc();
+			using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+				var context = serviceScope.ServiceProvider.GetRequiredService<RandomFoodContext>();
+                context.Database.EnsureCreated();
+            }
         }
     }
 }

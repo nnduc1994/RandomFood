@@ -9,10 +9,10 @@ services:
       - DOTNET_USE_POLLING_FILE_WATCHER=1
       - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages
     volumes:
-      - C:\Users\Administrator\source\repos\RandomFood\RandomFood:/app
-      - C:\Users\Administrator\vsdbg\vs2017u5:/remote_debugger:ro
-      - C:\Users\Administrator\.nuget\packages\:/root/.nuget/packages:ro
-      - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+      - /Users/ducnguyen/Coding/Web/RandomFood/RandomFood:/app
+      - /Users/ducnguyen/.vsdbg/vs2017u5:/remote_debugger:ro
+      - /Users/ducnguyen/.nuget/packages/:/root/.nuget/packages:ro
+      - /usr/local/share/dotnet/sdk/NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"

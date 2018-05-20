@@ -3,7 +3,7 @@ version: '3.4'
 services:
   randomfood:
     volumes:
-      - C:\Users\Administrator\vsdbg\vs2017u5:/remote_debugger:ro
+      - /Users/ducnguyen/.vsdbg/vs2017u5:/remote_debugger:ro
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"

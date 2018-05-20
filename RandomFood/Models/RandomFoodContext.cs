@@ -16,7 +16,5 @@ namespace RandomFood.Models
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<History> Histories { get; set; }
 
-       
-
     }
 }
