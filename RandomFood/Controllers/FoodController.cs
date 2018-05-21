@@ -6,6 +6,7 @@ using System.Transactions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using RandomFood.Models;
 using RandomFood.Repositories;
 
@@ -35,13 +36,16 @@ namespace RandomFood.Controllers
 
         [HttpPost]
         [Route("meal/create")]
-		public async Task<ActionResult> CreateMeal(Meal meal)
+		public async Task<IActionResult> CreateMeal([FromBody]Meal meal)
         {
-         
 			if (meal != null)
             {
 				var result = await _mealRepository.CreateMealsAsync(meal);
-                if (result != null) { }
+                if (result != null)
+                {
+                    return  Created("",result);
+                }
+                return BadRequest("Cannot create meal");
             }
             return BadRequest("No meal found");
         }
