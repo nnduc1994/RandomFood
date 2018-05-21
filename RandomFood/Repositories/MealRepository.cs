@@ -20,10 +20,9 @@ namespace RandomFood.Repositories
 		{
 			await _context.Meals.AddAsync(meal);
 			var result = await _context.SaveChangesAsync();
-			return (result) ? meal : null;
+			return (result > 0) ? meal : null;
 		}
 
-        public
 
 		public async Task<List<Meal>> GetMealsAsync()
 		{

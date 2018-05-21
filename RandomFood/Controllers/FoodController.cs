@@ -41,7 +41,7 @@ namespace RandomFood.Controllers
 			if (meal != null)
             {
 				var result = await _mealRepository.CreateMealsAsync(meal);
-				if(result != null)
+                if (result != null) { }
             }
             return BadRequest("No meal found");
         }

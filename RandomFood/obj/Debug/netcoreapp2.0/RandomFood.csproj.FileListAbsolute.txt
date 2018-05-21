@@ -1,13 +1,3 @@
-c:/users/administrator/source/repos/RandomFood/RandomFood/bin/Debug/netcoreapp2.0/RandomFood.deps.json
-c:/users/administrator/source/repos/RandomFood/RandomFood/bin/Debug/netcoreapp2.0/RandomFood.runtimeconfig.json
-c:/users/administrator/source/repos/RandomFood/RandomFood/bin/Debug/netcoreapp2.0/RandomFood.runtimeconfig.dev.json
-c:/users/administrator/source/repos/RandomFood/RandomFood/bin/Debug/netcoreapp2.0/RandomFood.dll
-c:/users/administrator/source/repos/RandomFood/RandomFood/bin/Debug/netcoreapp2.0/RandomFood.pdb
-c:/users/administrator/source/repos/RandomFood/RandomFood/obj/Debug/netcoreapp2.0/RandomFood.csproj.CoreCompileInputs.cache
-c:/users/administrator/source/repos/RandomFood/RandomFood/obj/Debug/netcoreapp2.0/RandomFood.AssemblyInfoInputs.cache
-c:/users/administrator/source/repos/RandomFood/RandomFood/obj/Debug/netcoreapp2.0/RandomFood.AssemblyInfo.cs
-c:/users/administrator/source/repos/RandomFood/RandomFood/obj/Debug/netcoreapp2.0/RandomFood.dll
-c:/users/administrator/source/repos/RandomFood/RandomFood/obj/Debug/netcoreapp2.0/RandomFood.pdb
 /Users/ducnguyen/Coding/Web/RandomFood/RandomFood/bin/Debug/netcoreapp2.0/RandomFood.deps.json
 /Users/ducnguyen/Coding/Web/RandomFood/RandomFood/bin/Debug/netcoreapp2.0/RandomFood.runtimeconfig.json
 /Users/ducnguyen/Coding/Web/RandomFood/RandomFood/bin/Debug/netcoreapp2.0/RandomFood.runtimeconfig.dev.json
@@ -18,3 +8,13 @@ c:/users/administrator/source/repos/RandomFood/RandomFood/obj/Debug/netcoreapp2.
 /Users/ducnguyen/Coding/Web/RandomFood/RandomFood/obj/Debug/netcoreapp2.0/RandomFood.AssemblyInfo.cs
 /Users/ducnguyen/Coding/Web/RandomFood/RandomFood/obj/Debug/netcoreapp2.0/RandomFood.dll
 /Users/ducnguyen/Coding/Web/RandomFood/RandomFood/obj/Debug/netcoreapp2.0/RandomFood.pdb
+C:\Users\Administrator\source\repos\RandomFood\RandomFood\obj\Debug\netcoreapp2.0\RandomFood.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\RandomFood\RandomFood\obj\Debug\netcoreapp2.0\RandomFood.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\RandomFood\RandomFood\obj\Debug\netcoreapp2.0\RandomFood.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\RandomFood\RandomFood\bin\Debug\netcoreapp2.0\RandomFood.deps.json
+C:\Users\Administrator\source\repos\RandomFood\RandomFood\bin\Debug\netcoreapp2.0\RandomFood.runtimeconfig.json
+C:\Users\Administrator\source\repos\RandomFood\RandomFood\bin\Debug\netcoreapp2.0\RandomFood.runtimeconfig.dev.json
+C:\Users\Administrator\source\repos\RandomFood\RandomFood\bin\Debug\netcoreapp2.0\RandomFood.dll
+C:\Users\Administrator\source\repos\RandomFood\RandomFood\bin\Debug\netcoreapp2.0\RandomFood.pdb
+C:\Users\Administrator\source\repos\RandomFood\RandomFood\obj\Debug\netcoreapp2.0\RandomFood.dll
+C:\Users\Administrator\source\repos\RandomFood\RandomFood\obj\Debug\netcoreapp2.0\RandomFood.pdb
