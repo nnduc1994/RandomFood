@@ -8,15 +8,18 @@ class MealList extends Component
         super(props);
         this.state = 
         {
-            
-        }
+            meals: []
+        };
     }
+    ComponentDidMount()
+    {
 
+    }
     render()
     {
         return (
             <div>
-                
+                Wala from Meal List
             </div>    
         );
     }
