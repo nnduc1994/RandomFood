@@ -21,4 +21,4 @@ x64/
 *.vspx
 
 # Visual studio folder
-.vs
+.vs/
