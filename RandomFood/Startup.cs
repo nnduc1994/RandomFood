@@ -28,6 +28,19 @@ namespace RandomFood
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+			services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials();
+                    });
+            });
+
             services.AddMvc(options => 
             {
                 //Config this to avoid deserialize loop or MUST return DTO object instead of Model
@@ -56,6 +69,12 @@ namespace RandomFood
             {
                 app.UseDeveloperExceptionPage();
             }
+
+			app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
             app.UseMvc();
 			using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {

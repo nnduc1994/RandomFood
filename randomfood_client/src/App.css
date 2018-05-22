@@ -31,14 +31,18 @@
 /*Flip card CSS*/
 .card-flip {
   perspective: 1000px;
+  margin-top:10px;
 }
 
-.card-rotate
-{
+.flip {
   transform: rotateY(180deg);
-
 }
 
+.un-flip {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
 
 .card-flip, .front, .back {
   width: 100%;
