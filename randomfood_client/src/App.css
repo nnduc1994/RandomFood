@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  /* margin: 30px; */
+  background-color: #F2F2F2;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App-logo {
@@ -8,7 +11,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #484848;
   height: 150px;
   padding: 20px;
   color: white;
@@ -27,42 +30,54 @@
   to { transform: rotate(360deg); }
 }
 
-
-/*Flip card CSS*/
-.card-flip {
-  perspective: 1000px;
-  margin-top:10px;
+.functionBox-container
+{
+  background-color:#484848;
+  text-align: center;
+  color: white;
+  padding: 70px;
+}
+.functionBox-feature
+{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+  'main-feature new-meal-box' 
+  'main-feature random-meal-box';
+}
+.main-feature
+{
+  grid-area: main-feature;
+  color: black;
+}
+.new-meal-box
+{
+  grid-area: new-meal-box;
+  
+}
+.random-meal-box 
+{
+  grid-area: random-meal-box;
+  
 }
 
-.flip {
-  transform: rotateY(180deg);
+.main-content
+{
+  margin: 50px 50px;
 }
 
-.un-flip {
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  position: relative;
+.create-meal-form
+{
+
+  padding: 15px;
+  margin-left: 15px;
+  background-color: #333333;
+  color:white
 }
 
-.card-flip, .front, .back {
-  width: 100%;
-  height: 480px;
-}
-.flip {
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  position: relative;
-}
-.front, .back {
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.front {
-  z-index: 2;
-  transform: rotateY(0deg);
-}
-.back {
-  transform: rotateY(180deg);
+.create-meal-form input 
+{
+  background-color: #3D3D3D;
+  color: white;
 }

@@ -1,50 +1,47 @@
 ﻿import React, { Component } from 'react';
-import MealCard from './MealCard';
+import MealCard from './Widget/MealCard';
 import {connect} from 'react-redux';
+import _ from 'lodash';
 
 class MealList extends Component
 {
     constructor(props)
     {
         super(props);
-        this.createMeals = this.createMeals.bind(this);
-    }
-    componentWillMount()
-    {               
-        fetch("http://localhost:57339/api/food/meals")
-            .then(result => { return result.json(); })
-            .then(data => {
-                this.props.dispatch({
-                    type:'FETCH_ALL_MEALS',
-                    data});
-            });
+        this.createCardRows = this.createCardRows.bind(this);
     }
 
-    createMeals(meal)
-    {   
-        return (
-            <div className="col-md-2">
-                <MealCard meal={meal}></MealCard> 
-            </div>
-     );
-    }
+    // componentDidMount()
+    // {               
+    //     fetch("http://localhost:57339/api/food/meals")
+    //         .then(result => { return result.json(); })
+    //         .then(data => {
+    //             this.props.dispatch({
+    //                 type:'FETCH_ALL_MEALS',
+    //                 data});
+    //         });
+    // }
 
-    flip()
-    {
-       this.setState((prevState) => {
-           return {
-               isCardFront: !prevState.isCardFront
-           }
-       })
-    }
+    createCardRows(meals)
+    {  
+       let mealColumns = meals.map((meal) => {
+            return <div className="col-md-3"><MealCard meal={meal}></MealCard></div>
+       });
 
-    render(){        
-        var cards = this.props.meals.map(x => this.createMeals(x));
-        return (
+       return(
             <div className="row">
-                {cards}
+                {mealColumns} 
             </div>
-        );
+       );
+    }
+
+    render()
+    {        
+        let mealChunkArray = _.chunk(this.props.meals, 4);
+        let rows = mealChunkArray.map(x => this.createCardRows(x));
+        return(
+            rows
+        )
     }
 }
 
