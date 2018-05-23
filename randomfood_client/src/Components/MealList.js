@@ -6,9 +6,12 @@ class MealList extends Component
 {
     constructor(props)
     {
+        let currentCardInRow = 0;
         super(props);
-        this.createMeals = this.createMeals.bind(this);
+        this.createCardRows = this.createCardRows.bind(this);
+        this.createRow = this.createRow.bind(this);
     }
+
     componentWillMount()
     {               
         fetch("http://localhost:57339/api/food/meals")
@@ -20,30 +23,48 @@ class MealList extends Component
             });
     }
 
-    createMeals(meal)
-    {   
-        return (
-            <div className="col-md-2">
-                <MealCard meal={meal}></MealCard> 
+    createRow(meals)
+    {
+        console.log(meals.children);
+        return(
+            <div className="row">
+                {meals}
             </div>
-     );
+        );
     }
 
-    flip()
+    createCardRows(meals)
     {
-       this.setState((prevState) => {
-           return {
-               isCardFront: !prevState.isCardFront
-           }
-       })
+        let tempList = [];
+        let goingTobeRows = []
+        let mealCards = meals.map((meal, index) => {
+            if(index  % 4 == 0)
+                {
+                    goingTobeRows.push(this.createRow(tempList));
+                    tempList = [];
+                }
+            else 
+                {
+                    tempList.push(    
+                        <div className="col-md-3">
+                            <MealCard meal={meal}></MealCard> 
+                        </div> 
+                    );
+                }
+        });
+        console.log(goingTobeRows);      
+        return(
+            goingTobeRows 
+        )
     }
+
+   
 
     render(){        
-        var cards = this.props.meals.map(x => this.createMeals(x));
-        return (
-            <div className="row">
-                {cards}
-            </div>
+        let cardRows = this.createCardRows(this.props.meals);
+     
+        return(
+            cardRows      
         );
     }
 }

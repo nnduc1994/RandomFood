@@ -31,20 +31,16 @@ class MealCard extends Component
 
    render()
    {
-        let style = 
-        {
-            width:'18rem'
-        }
         let src = "https://www.metro.ca/userfiles/image/recipes/pizza-saucisse-piquante-2301.jpg";
         let ingredientImgSrc = "https://mazzainnovation.com/wp-content/uploads/2015/02/our-ingredients-side.jpg";
 
         let ingridentsList = this.props.meal.Ingredients.map(x => this.CreateIngredient(x));
 
         return(
-                <div className="card-flip">
+                <div className="card-flip ">
                         <div className={(this.state.isCardFront) ? "un-flip" : "flip"}>
                             <div className="front">
-                                <div className="card" style={style}>
+                                <div className="card">
                                     <img className="card-img-top" src={src} alt="Card image cap"/>
                                     <div className="card-body">
                                         <h5 className="card-title">{this.props.meal.Name}</h5>
@@ -59,7 +55,7 @@ class MealCard extends Component
                                 </div>
                             </div>
                             <div className="back">
-                            <div className="card" style={style}>
+                                <div className="card">
                                     <img className="card-img-top" src={ingredientImgSrc} alt="Card image cap"/>
                                     <div className="card-body">
                                         <h5 className="card-title">{this.props.meal.Name}</h5>
