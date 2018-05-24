@@ -1,15 +1,14 @@
 ﻿import React, { Component } from 'react';
 import MealCard from './MealCard';
 import {connect} from 'react-redux';
+import _ from 'lodash';
 
 class MealList extends Component
 {
     constructor(props)
     {
-        let currentCardInRow = 0;
         super(props);
         this.createCardRows = this.createCardRows.bind(this);
-        this.createRow = this.createRow.bind(this);
     }
 
     componentWillMount()
@@ -23,49 +22,28 @@ class MealList extends Component
             });
     }
 
-    createRow(meals)
-    {
-        console.log(meals.children);
-        return(
-            <div className="row">
-                {meals}
-            </div>
-        );
-    }
-
     createCardRows(meals)
-    {
-        let tempList = [];
-        let goingTobeRows = []
-        let mealCards = meals.map((meal, index) => {
-            if(index  % 4 == 0)
-                {
-                    goingTobeRows.push(this.createRow(tempList));
-                    tempList = [];
-                }
-            else 
-                {
-                    tempList.push(    
-                        <div className="col-md-3">
-                            <MealCard meal={meal}></MealCard> 
-                        </div> 
-                    );
-                }
-        });
-        console.log(goingTobeRows);      
-        return(
-            goingTobeRows 
-        )
+    {  
+       let mealColumns = meals.map((meal) => {
+            return <div className="col-md-3"><MealCard meal={meal}></MealCard></div>
+       });
+
+       return(
+            <div className="row">
+                {mealColumns} 
+
+            </div>
+       );
     }
 
-   
-
-    render(){        
-        let cardRows = this.createCardRows(this.props.meals);
-     
+    render()
+    {        
+        let mealChunkArray = _.chunk(this.props.meals, 4);
+        console.log(mealChunkArray);
+        let rows = mealChunkArray.map(x => this.createCardRows(x));
         return(
-            cardRows      
-        );
+            rows
+        )
     }
 }
 
