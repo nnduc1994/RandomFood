@@ -31,7 +31,6 @@ class MealList extends Component
        return(
             <div className="row">
                 {mealColumns} 
-
             </div>
        );
     }
@@ -39,7 +38,6 @@ class MealList extends Component
     render()
     {        
         let mealChunkArray = _.chunk(this.props.meals, 4);
-        console.log(mealChunkArray);
         let rows = mealChunkArray.map(x => this.createCardRows(x));
         return(
             rows
