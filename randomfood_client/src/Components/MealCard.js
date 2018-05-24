@@ -9,17 +9,7 @@ class MealCard extends Component
         {
             isCardFront : true
         }
-        this.flip = this.flip.bind(this);
         this.CreateIngredient = this.CreateIngredient.bind(this);
-    }
-
-    flip(e)
-    {  
-       this.setState((prevState) => {
-           return {
-               isCardFront: !prevState.isCardFront
-           }
-       })
     }
 
     CreateIngredient(ingredient)
@@ -33,7 +23,6 @@ class MealCard extends Component
    {
         let src = "https://www.metro.ca/userfiles/image/recipes/pizza-saucisse-piquante-2301.jpg";
         let ingredientImgSrc = "https://mazzainnovation.com/wp-content/uploads/2015/02/our-ingredients-side.jpg";
-        let style = {visibility: 'hidden'}
         let ingridentsList = this.props.meal.Ingredients.map(x => this.CreateIngredient(x));
         return(
                 <div>
