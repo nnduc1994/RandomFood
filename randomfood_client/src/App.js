@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MealList from "./Components/MealList"
-import RandomDrawMealCard from "./Components/RandomDrawMealCard"
+import FunctionBox from "./Components/FunctionBox"
 class App extends Component {
   render() {
     return (
@@ -10,7 +10,7 @@ class App extends Component {
               <MealList></MealList>
              </div>
              <div className="col-md-4">
-               <RandomDrawMealCard></RandomDrawMealCard>
+               <FunctionBox></FunctionBox>
              </div>
            </div>
         </div>

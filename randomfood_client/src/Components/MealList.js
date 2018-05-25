@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import MealCard from './MealCard';
+import MealCard from './Widget/MealCard';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 
