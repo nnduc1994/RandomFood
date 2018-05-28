@@ -23,11 +23,12 @@ class RandomPickMeal extends Component
 
     render(){
         let defaultSrc = "https://grandchineserestaurant.com/img/placeholders/xcomfort_food_placeholder.png,qv=1.pagespeed.ic.x100Yi-Swz.png";
-        
+
         let bodyContain = (this.state.currentRandomcard != null) ? <MealCard meal={this.state.currentRandomcard}></MealCard>
                           :  <EmptyCard ImageSrc={defaultSrc} Title="WHAT TO EAT?" ></EmptyCard>
+
         return(
-            <div className="container">
+            <div>
                 {bodyContain}
                 <button onClick={this.randomPickCard} className="btn btn-default">Pick a meal</button>
             </div>

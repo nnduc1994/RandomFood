@@ -24,9 +24,10 @@ class MealCard extends Component
         let src = "https://www.metro.ca/userfiles/image/recipes/pizza-saucisse-piquante-2301.jpg";
         let ingredientImgSrc = "https://mazzainnovation.com/wp-content/uploads/2015/02/our-ingredients-side.jpg";
         let ingridentsList = this.props.meal.Ingredients.map(x => this.CreateIngredient(x));
+        let style= {"max-width":"18rem;"};
         return(
                 <div>
-                    <div className="card">
+                    <div className="card" style={style}>
                         <img className="card-img-top img-responsive" src={src} alt="Card image cap"/>
                         <div className="card-body">
                             <h5 className="card-title">{this.props.meal.Name}</h5>

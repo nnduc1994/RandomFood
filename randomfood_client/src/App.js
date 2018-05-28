@@ -5,14 +5,8 @@ class App extends Component {
   render() {
     return (
          <div className="App">
-           <div className="row">
-             <div className="col-md-8">
+              <FunctionBox></FunctionBox>
               <MealList></MealList>
-             </div>
-             <div className="col-md-4">
-               <FunctionBox></FunctionBox>
-             </div>
-           </div>
         </div>
     );
   }

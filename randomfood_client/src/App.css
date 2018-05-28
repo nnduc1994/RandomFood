@@ -27,3 +27,36 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+
+.functionBox-container
+{
+  background-color:#19191b;
+  text-align: center;
+  color: white;
+}
+.functionBox-feature
+{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+  'main-feature new-meal-box' 
+  'main-feature random-meal-box';
+
+}
+.main-feature
+{
+  grid-area: main-feature;
+  height: 100px;
+}
+.new-meal-box
+{
+  grid-area: new-meal-box
+}
+.random-meal-box 
+{
+  grid-area: random-meal-box;
+  
+}
