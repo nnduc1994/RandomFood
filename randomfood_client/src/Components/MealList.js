@@ -11,16 +11,16 @@ class MealList extends Component
         this.createCardRows = this.createCardRows.bind(this);
     }
 
-    componentWillMount()
-    {               
-        fetch("http://localhost:57339/api/food/meals")
-            .then(result => { return result.json(); })
-            .then(data => {
-                this.props.dispatch({
-                    type:'FETCH_ALL_MEALS',
-                    data});
-            });
-    }
+    // componentDidMount()
+    // {               
+    //     fetch("http://localhost:57339/api/food/meals")
+    //         .then(result => { return result.json(); })
+    //         .then(data => {
+    //             this.props.dispatch({
+    //                 type:'FETCH_ALL_MEALS',
+    //                 data});
+    //         });
+    // }
 
     createCardRows(meals)
     {  

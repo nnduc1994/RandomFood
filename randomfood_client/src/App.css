@@ -1,6 +1,8 @@
 .App {
   text-align: center;
-  margin: 30px;
+  /* margin: 30px; */
+  background-color: #F2F2F2;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App-logo {
@@ -9,7 +11,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #484848;
   height: 150px;
   padding: 20px;
   color: white;
@@ -28,35 +30,54 @@
   to { transform: rotate(360deg); }
 }
 
-
-
 .functionBox-container
 {
-  background-color:#19191b;
+  background-color:#484848;
   text-align: center;
   color: white;
+  padding: 70px;
 }
 .functionBox-feature
 {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 3fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
   'main-feature new-meal-box' 
   'main-feature random-meal-box';
-
 }
 .main-feature
 {
   grid-area: main-feature;
-  height: 100px;
+  color: black;
 }
 .new-meal-box
 {
-  grid-area: new-meal-box
+  grid-area: new-meal-box;
+  
 }
 .random-meal-box 
 {
   grid-area: random-meal-box;
   
+}
+
+.main-content
+{
+  margin: 50px 50px;
+}
+
+.create-meal-form
+{
+
+  padding: 15px;
+  margin-left: 15px;
+  background-color: #333333;
+  color:white
+}
+
+.create-meal-form input 
+{
+  background-color: #3D3D3D;
+  color: white;
 }

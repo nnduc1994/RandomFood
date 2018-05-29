@@ -22,9 +22,8 @@ class MealCard extends Component
    render()
    {
         let src = "https://www.metro.ca/userfiles/image/recipes/pizza-saucisse-piquante-2301.jpg";
-        let ingredientImgSrc = "https://mazzainnovation.com/wp-content/uploads/2015/02/our-ingredients-side.jpg";
         let ingridentsList = this.props.meal.Ingredients.map(x => this.CreateIngredient(x));
-        let style= {"max-width":"18rem;"};
+        let style= {maxWidth:"18rem;"};
         return(
                 <div>
                     <div className="card" style={style}>
