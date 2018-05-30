@@ -7,7 +7,7 @@ class MealIngredientForm extends Component
         super(props);
     }
     render()
-    {   let style = { margin: "auto"};
+    {   
         return(
             <div class="form-group row" style = {style}>
                 <label for="example-text-input" class="col-1 col-form-label">Name</label>
