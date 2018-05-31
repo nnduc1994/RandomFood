@@ -15,13 +15,14 @@ class CreateMealForm extends Component {
         this.addIngredient = this.addIngredient.bind(this);
         this.createRecipe = this.createRecipe.bind(this);
         this.handleDeleteIngredient = this.handleDeleteIngredient.bind(this);
+        this.handleUpdateIngredient = this.handleUpdateIngredient.bind(this);
     }
 
     addIngredient(e) {
         e.preventDefault();
         this.setState((prevState) => {
             return {
-                IngredientList: [...prevState.IngredientList, { clientId: shortId.generate() }]
+                IngredientList: [...prevState.IngredientList, { clientId: shortId.generate(), Name: "" , Amount: 0 }]
             }
         });
     }
@@ -41,12 +42,30 @@ class CreateMealForm extends Component {
         })
     }
 
+    handleUpdateIngredient(Ingredient)
+    { 
+        this.setState(prevState => {
+            return{
+                IngredientList: prevState.IngredientList.map((i) => {
+                    if(i.clientId == Ingredient.clientId)
+                    {
+                        i.Name = Ingredient.Name;
+                        i.Amount = Ingredient.Amount;
+                        return i;
+                    }
+                    return i;
+                })
+            }; 
+        })
+    }
+
     render() {
         let ingredientDOM = this.state.IngredientList.map(i => {
             return (
                 <MealIngredientForm onIngredientUpdate={this.onIngredientUpgrade}
                     Ingredient={i} key={i.clientId}
-                    DeleteIngredient={this.handleDeleteIngredient}>
+                    DeleteIngredient={this.handleDeleteIngredient} 
+                    UpdateIngredient={this.handleUpdateIngredient}>
                 </MealIngredientForm>
             );
         });
