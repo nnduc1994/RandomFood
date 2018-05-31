@@ -1,54 +1,66 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-class MealIngredientForm extends Component
-{
-    constructor(props)
+const INPUT_TYPE =
     {
+        NAME: "input-ingredient-name",
+        AMOUNT: "input-ingredient-amount"
+    };
+
+class MealIngredientForm extends Component {
+    constructor(props) {
         super(props);
         this.state = {
-            Ingredient : {},
-            test: ""
+            Ingredient: {},
         }
-        this.onNameChange = this.onNameChange.bind(this);
-        this.Test = this.Test.bind(this);
+        this.onDataChange = this.onDataChange.bind(this);
+        this.inputOnBlur = this.inputOnBlur.bind(this);
+        this.delete = this.delete.bind(this);
     }
 
-    componentDidMount()
+    inputOnBlur(e)
     {
-        this.setState({Ingredient: this.props.Ingredient});
+        // this.props.UpdateIngredient(this.state.Ingredient);
     }
 
-    onNameChange(e)
-    {  const nameValue = e.target.value;
-       this.setState((prevState) => {
-           return { Ingredient: { ...prevState.Ingredient, Name: nameValue}  }
-       })
+    componentDidMount() {
+        this.setState({ Ingredient: this.props.Ingredient });
     }
 
-    onAmountChange(e)
+    delete()
     {
-
+        this.props.DeleteIngredient(this.state.Ingredient.clientId);
     }
 
-    Test(e)
-    {
-        e.preventDefault();
-        console.log(this.state.Ingredient);
-    }
+    onDataChange(e) {
+        const inputValue = e.target.value;
+        const inputId = e.target.id;
+        
+        this.setState((prevState) => {
+            switch (inputId) {
+                case INPUT_TYPE.NAME:
+                    return { Ingredient: { ...prevState.Ingredient, Name: inputValue}  }
+                    break;
+                case INPUT_TYPE.AMOUNT:
+                    return { Ingredient: { ...prevState.Ingredient, Amount: inputValue}  }
+                    break;
+            }
+        });
+    };
 
-    render()
-    {   
-        return(
+    render() {
+        return (
             <div class="form-group row">
                 <label for="example-text-input" class="col-1 col-form-label">Name</label>
                 <div class="col-3">
-                    <input class="form-control" onChange={this.onNameChange} value={this.state.Ingredient.Name} type="text" id="example-text-input" />
+                    <input class="form-control" onBlur={this.inputOnBlur} onChange={this.onNameChange} value={this.state.Ingredient.Name} type="text" id="example-text-input" />
                 </div>
                 <label for="example-text-input" class="col-1 col-form-label">Amount</label>
                 <div class="col-2">
-                    <input class="form-control" onChange={this.onDataChange} value={this.state.Ingredient.Amount} type="text" id="example-text-input" />
+                    <input class="form-control" onBlur={this.inputOnBlur} onChange={this.onDataChange} value={this.state.Ingredient.Amount} type="text" id="example-text-input" />
                 </div>
-                <button onClick={this.Test}>Test</button>
+                <div class="col-2" onClick={this.delete}>
+                    <i className="fa fas fa-minus-circle fa-2x"></i>
+                </div>
             </div>
         );
     }
