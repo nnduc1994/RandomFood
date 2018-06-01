@@ -60,6 +60,7 @@ namespace RandomFood
             //Postgre connection
             services.AddEntityFrameworkNpgsql().AddDbContext<RandomFoodContext>(options =>
                     options.UseNpgsql(connectionString));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

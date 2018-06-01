@@ -43,8 +43,8 @@ class MealIngredientForm extends Component {
     render() {
         return (
             <div class="form-group row">
-                <label for="example-text-input" class="col-1 col-form-label">Name</label>
-                <div class="col-3">
+                <label for="example-text-input" class="col-3 col-form-label">Name</label>
+                <div class="col-4">
                     <input class="form-control" onBlur={this.inputOnBlur} onChange={this.onDataChange} defaultValue={this.props.Ingredient.Name} type="text" id={INPUT_TYPE.NAME} />
                 </div>
                 <label for="example-text-input" class="col-1 col-form-label">Amount</label>

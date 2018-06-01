@@ -11,25 +11,14 @@ class MealList extends Component
         this.createCardRows = this.createCardRows.bind(this);
     }
 
-    // componentDidMount()
-    // {               
-    //     fetch("http://localhost:57339/api/food/meals")
-    //         .then(result => { return result.json(); })
-    //         .then(data => {
-    //             this.props.dispatch({
-    //                 type:'FETCH_ALL_MEALS',
-    //                 data});
-    //         });
-    // }
-
     createCardRows(meals)
     {  
        let mealColumns = meals.map((meal) => {
-            return <div className="col-md-3"><MealCard meal={meal}></MealCard></div>
+            return <div className="col-md-3 d-flex"><MealCard meal={meal}></MealCard></div>
        });
 
        return(
-            <div className="row">
+            <div className="meal-card-list row">
                 {mealColumns} 
             </div>
        );

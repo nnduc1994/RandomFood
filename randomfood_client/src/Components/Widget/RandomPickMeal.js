@@ -21,8 +21,9 @@ class RandomPickMeal extends Component {
     render() {
         let currentRandomcard = this.props.meals[Math.floor(Math.random() * this.props.meals.length)];
         return (
-            <div >
-                <CompactMealCard meal={currentRandomcard}></CompactMealCard>
+            
+            <div>
+                {(currentRandomcard != null) ? <CompactMealCard meal={currentRandomcard}></CompactMealCard> : ""} 
             </div>
         )
     }

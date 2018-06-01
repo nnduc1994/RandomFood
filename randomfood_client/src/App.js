@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MealList from "./Components/MealList"
 import FunctionBox from "./Components/FunctionBox"
 import { connect } from 'react-redux';
+import {GetMeals} from "./Helpers/API/RandomMealAPIHelper"
 
 class App extends Component {
   
@@ -14,15 +15,15 @@ class App extends Component {
   }
 
   componentDidMount()
-  {               
-      fetch("http://localhost:57339/api/food/meals")
-          .then(result => { return result.json(); })
-          .then(data => {
-              this.props.dispatch({
-                  type:'FETCH_ALL_MEALS',
-                  data});
-              this.setState({dataLoaded: true})     
-          });
+  {   
+      GetMeals()
+        .then(data => { 
+            this.props.dispatch({
+                type:'FETCH_ALL_MEALS',
+                data});
+            this.setState({dataLoaded: true})
+          })
+          .catch(error => console.log(error))
   }
 
   render() {
