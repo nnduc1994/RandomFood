@@ -53,14 +53,18 @@ namespace RandomFood
 
             var connectionString = Configuration.GetConnectionString("RandomFoodConnection");
 
-            //SQL Serer connection 
-            //services.AddDbContext<RandomFoodContext>(options =>
-            //        options.UseSqlServer(connectionString));
-
-            //Postgre connection
-            services.AddEntityFrameworkNpgsql().AddDbContext<RandomFoodContext>(options =>
-                    options.UseNpgsql(connectionString));
-
+            if (connectionString.Contains("localhost"))
+            {
+                //Postgre connection
+                services.AddEntityFrameworkNpgsql().AddDbContext<RandomFoodContext>(options =>
+                        options.UseNpgsql(connectionString));
+            }
+            else
+            {
+                //SQL Serer connection 
+                services.AddDbContext<RandomFoodContext>(options =>
+                        options.UseSqlServer(connectionString));
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -77,9 +81,10 @@ namespace RandomFood
                 .AllowAnyHeader()
                 .AllowCredentials());
             app.UseMvc();
-			using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
-				var context = serviceScope.ServiceProvider.GetRequiredService<RandomFoodContext>();
+                var context = serviceScope.ServiceProvider.GetRequiredService<RandomFoodContext>();
                 context.Database.EnsureCreated();
             }
         }
