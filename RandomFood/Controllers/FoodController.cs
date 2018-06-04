@@ -35,7 +35,7 @@ namespace RandomFood.Controllers
         }
 
         [HttpPost]
-        [Route("meal/create")]
+        [Route("create")]
 		public async Task<IActionResult> CreateMeal([FromBody]Meal meal)
         {
 			if (meal != null)

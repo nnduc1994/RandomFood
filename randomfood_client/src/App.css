@@ -69,7 +69,6 @@
 
 .create-meal-form
 {
-
   padding: 15px;
   margin-left: 15px;
   background-color: #333333;
@@ -80,4 +79,27 @@
 {
   background-color: #3D3D3D;
   color: white;
+}
+.create-meal-form textarea 
+{
+  background-color: #3D3D3D;
+  color: white;
+}
+.sixty_percent_width
+{
+  width: 60%;
+}
+.margin_center
+{
+  margin:auto;
+}
+.inline
+{
+  display: inline-block;
+  margin: 10px;
+}
+
+.meal-card-list
+{
+  margin-bottom: 35px;
 }
