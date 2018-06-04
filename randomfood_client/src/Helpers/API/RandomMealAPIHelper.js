@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const baseURL = "https://randomfoodapi.azurewebsites.net";
-// const baseURL = "http://localhost:57339";
+//const baseURL = "http://localhost:57339";
 
 export function GetMeals() {
     return new Promise((resolve, reject) => {
@@ -39,25 +39,4 @@ export function CreateMeal(Meal) {
     })
 }
 
-// export function CreateMeal(Meal) {
-//     console.log(Meal);
-//     return new Promise((resolve, reject) => {
-//         fetch(url, {
-//             method: 'POST', // or 'PUT'
-//             body: JSON.stringify(data), // data can be `string` or {object}!
-//             headers:{
-//               'Content-Type': 'application/json'
-//             }
-//           })
-//             .then(result => {
-//                 if (result.status != 201) {
-//                     return reject("Error while creating meals from API");
-//                 }
-//                 else
-//                     return result.json();
-//             })
-//             .then(data => { return resolve(data) })
-//     })
-// })
-// }
 

@@ -11,7 +11,7 @@ class LoadingAnimation extends Component
     {
         return(
             <div className="loading-animation">
-                <img src="/Images/Loading_icon.gif" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" />
                 <h3>Fetching data ....</h3>
             </div>
         );
