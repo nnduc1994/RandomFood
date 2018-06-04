@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+const baseURL = "https://randomfoodapi.azurewebsites.net";
+// const baseURL = "http://localhost:57339";
 
 export function GetMeals() {
     return new Promise((resolve, reject) => {
-        fetch("http://localhost:57339/api/food/meals")
+        fetch(`${baseURL}/api/food/meals`)
             .then(result => {
                 console.log(result.status)
                 if (result.status != 200) {
@@ -19,7 +21,7 @@ export function GetMeals() {
 
 export function CreateMeal(Meal) {
     return new Promise((resolve, reject) => {
-        fetch("http://localhost:57339/api/food/create", {
+        fetch(`${baseURL}/api/food/create`, {
             method: 'POST',
             body: JSON.stringify(Meal), // data can be `string` or {object}!
             headers: {
