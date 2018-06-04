@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import MealList from "./Components/MealList"
 import FunctionBox from "./Components/FunctionBox"
 import { connect } from 'react-redux';
-import {GetMeals} from "./Helpers/API/RandomMealAPIHelper"
-
+import {GetMeals} from "./Helpers/API/RandomMealAPIHelper";
+import LoadingAnimation from "./Components/Widget/LoadingAnimation";
 class App extends Component {
   
   constructor(props)
@@ -37,9 +37,10 @@ class App extends Component {
               </div>
         </div>
         );
+
     }
     else
-      return (<div>Loading</div>)
+      return (<LoadingAnimation message="Fetching data...."></LoadingAnimation>)
    
   }
 }
