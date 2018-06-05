@@ -4,6 +4,7 @@ import FunctionBox from "./Components/FunctionBox"
 import { connect } from 'react-redux';
 import {GetMeals} from "./Helpers/API/RandomMealAPIHelper";
 import LoadingAnimation from "./Components/Widget/LoadingAnimation";
+import MealDetail from "./Components/MealDetail"
 class App extends Component {
   
   constructor(props)

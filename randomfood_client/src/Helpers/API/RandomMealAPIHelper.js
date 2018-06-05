@@ -23,7 +23,7 @@ export function CreateMeal(Meal) {
     return new Promise((resolve, reject) => {
         fetch(`${baseURL}/api/food/create`, {
             method: 'POST',
-            body: JSON.stringify(Meal), // data can be `string` or {object}!
+            body: JSON.stringify(Meal), 
             headers: {
                 'Content-Type': 'application/json'
             }
