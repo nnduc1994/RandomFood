@@ -153,7 +153,7 @@ class CreateMealForm extends Component {
                         <label for="example-text-input" class="col-2 col-form-label">Picture URL</label>
                         <div class="col-5">
                             <input id={INPUT_TYPE.PICTUREURL} onChange={this.onInputChange}
-                                class="form-control" value={this.state.Meal.PictureURL} type="text" />
+                                class="form-control" value={this.state.Meal.PictureUrl} type="text" />
                         </div>
                     </div>
                     <hr />
